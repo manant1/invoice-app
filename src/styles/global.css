@@ -279,13 +279,13 @@ input[type="checkbox"]:checked + b::after {
 @responsive {
     .sideview-slide-in {
         animation: slide-in 0.5s forwards;
-        animation-timing-function: ease-out;
+        animation-timing-function: linear;
         animation-delay: 0ms;
     }
 
     .sideview-slide-in-mobile {
         animation: slide-in-mobilde 0.5s forwards;
-        animation-timing-function: ease-out;
+        animation-timing-function: linear;
         animation-delay: 0ms;
     }
 
@@ -303,7 +303,7 @@ input[type="checkbox"]:checked + b::after {
 }
 
 .backdrop {
-    animation: backdrop 0.5s forwards;
+    animation: backdrop 0.4s forwards;
     animation-delay: 0ms;
     animation-timing-function: linear;
 }
@@ -328,12 +328,12 @@ input[type="checkbox"]:checked + b::after {
         display: block;
     }
 
-    95% {
-        width: 52.5%;
+    80% {
+        width: 57.5%;
     }
 
     100% {
-        width: 50%;
+        width: 55%;
     }
 }
 

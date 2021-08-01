@@ -8,6 +8,7 @@
 @responsive {
     .invoice-grid {
         display: grid;
+        grid-template-columns: auto auto auto auto auto auto auto min-content;
         grid-template-areas: "invoiceNo dueDate client client client sum status chevron";
     }
 }
