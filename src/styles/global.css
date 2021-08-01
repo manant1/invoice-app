@@ -96,40 +96,40 @@
 
     .theme-dark {
         --color-text-base: #fff;
-        --color-text-primary: #0C0E16;
+        --color-text-primary: #fff;
         --color-text-primary-muted: #777F98;
-        --color-text-primary-button-muted: #7E88C3;
-        --color-text-label: #7E88C3;
-        --color-text-muted: #888EB0;
+        --color-text-primary-button-muted: #fff;
+        --color-text-label: #dfe3fa;
+        --color-text-muted: #dfe3fa;
         --color-text-inverted: #fff;
         --color-text-success: #33d69f;
         --color-text-warning: #ff8f02;
-        --color-text-draft: #373b53;
+        --color-text-draft: #dfe3fa;
 
-        --color-input-text: #0C0E16;
-        --color-input-text-muted: #9e9fa2;
+        --color-input-text: #fff;
+        --color-input-text-muted: #fff;
 
-        --color-bg-page: #f8f8fb;
-        --color-bg-fill: #373b53;
+        --color-bg-page: #141625;
+        --color-bg-fill: #1e2139;
         --color-bg-primary: #7c5dfa;
         --color-bg-hover: #9277FF;
         --color-bg-success: #33d69f;
         --color-bg-warning: #ff8f02;
-        --color-bg-draft: #373b53;
+        --color-bg-draft: #282d46;
 
         --color-button-primary: #7c5dfa;
         --color-button-primary-hover: #9277FF;
-        --color-button-primary-muted: #f9fafe;
-        --color-button-primary-muted-hover: #dfe3fa;
-        --color-button-success: #f3fdf9;
-        --color-button-warning: #fff8f0;
-        --color-button-draft: #f3f3f5;
-        --color-button-draft-hover: #0C0E16;
+        --color-button-primary-muted: #252945;
+        --color-button-primary-muted-hover: #1e2139;
+        --color-button-success: rgba(51, 214, 159, 0.06);
+        --color-button-warning: rgba(255, 143, 0, 0.06);
+        --color-button-draft: rgba(223, 227, 250, 0.06);
+        --color-button-draft-hover: #1e2139;
         --color-button-danger: #ec5757;
 
         --color-icon-primary: #7c5dfa;
-        --color-icon: #888EB0;
-        --color-icon-muted: #7E88C3;
+        --color-icon: #888eb0;
+        --color-icon-muted: #4e557e;
 
         --color-checkbox: #DFE3FA;
         --color-checkbox-checked: #7c5dfa;
@@ -139,6 +139,8 @@
 
     body {
         background: var(--color-bg-page);
+        transition: color 0.35s linear, background 0.35s linear, opacity 0.35s linear;
+        transition-delay: 0ms;
     }
 }
 
@@ -278,14 +280,14 @@ input[type="checkbox"]:checked + b::after {
 
 @responsive {
     .sideview-slide-in {
-        animation: slide-in 0.5s forwards;
-        animation-timing-function: linear;
+        animation: slide-in 0.35s forwards;
+        animation-timing-function: ease-out;
         animation-delay: 0ms;
     }
 
     .sideview-slide-in-mobile {
-        animation: slide-in-mobilde 0.5s forwards;
-        animation-timing-function: linear;
+        animation: slide-in-mobilde 0.35s forwards;
+        animation-timing-function: ease-out;
         animation-delay: 0ms;
     }
 
@@ -329,11 +331,11 @@ input[type="checkbox"]:checked + b::after {
     }
 
     80% {
-        width: 57.5%;
+        width: 730px;
     }
 
     100% {
-        width: 55%;
+        width: 750px;
     }
 }
 

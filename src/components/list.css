@@ -34,7 +34,7 @@
 .status {
     grid-area: status;
     align-self: center;
-    justify-self: right;
+    justify-self: center;
 }
 
 .sum {
@@ -47,4 +47,20 @@
     grid-area: chevron;
     justify-self: right;
     align-self: center;
+}
+
+.list-item {
+    animation: fade-in 2s forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 0ms;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

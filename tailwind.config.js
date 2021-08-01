@@ -28,6 +28,7 @@ module.exports = {
       },
       textColor: {
         ...defaultTheme.textColor,
+        white: "#fff",
         base: "var(--color-text-base)",
         "primary": "var(--color-text-primary)",
         "primary-muted": "var(--color-text-primary-muted)",
@@ -64,12 +65,14 @@ module.exports = {
         checkbox: "var(--color-checkbox)",
         "checkbox-checked": "var(--color-checkbox-checked)",
         "divider": "var(--color-divider)"
+      },
+      borderColor: {
+        ...defaultTheme.borderColor,
+        primary: "var(--color-bg-primary)"
       }
     },
   },
-  variants: {
-    extend: {}
-  },
+  variants: {},
   plugins: [
     require("@tailwindcss/forms")
   ]

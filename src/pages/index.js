@@ -10,19 +10,48 @@ import Sideview from "../components/sideview"
 
 const options = [{
   name: "Paid",
+  status: "success",
   value: "0"
 }, {
   name: "Pending",
+  status: "warning",
   value: "1"
 }, {
   name: "Draft",
+  status: "draft",
   value: "2"
 }]
 
 const items = [{
-  invoiceNo: "RT3080"
+  invoiceNo: "MA00001",
+  dueDate: "2021-07-01",
+  status: options[0].status,
+  type: options[0].name,
+  client: {
+    name: "Jensen",
+    lastName: "Huang"
+  },
+  sum: 2000.99
 }, {
-  invoiceNo: "XM9141"
+  invoiceNo: "MA00002",
+  dueDate: "2021-08-05",
+  status: options[2].status,
+  type: options[2].name,
+  client: {
+    name: "Alex",
+    lastName: "Grim"
+  },
+  sum: 1500.5
+}, {
+  invoiceNo: "MA00002",
+  dueDate: "2021-08-05",
+  status: options[1].status,
+  type: options[1].name,
+  client: {
+    name: "Anita",
+    lastName: "Watkins"
+  },
+  sum: 1999
 }]
 
 const IndexPage = () => {
@@ -33,7 +62,7 @@ const IndexPage = () => {
   }
 
   return (
-    <Layout> <Seo title="Invoices"/> <Sideview open={open} onClose={onClose}/>
+    <Layout> <Seo title="Invoices"/> <Sideview className="bg-white dark:bg-page" open={open} onClose={onClose}/>
       <div className="flex-1 w-full py-18 px-12">
         <div className="max-w-3xl mx-auto h-full">
           <div className="flex justify-between items-center">

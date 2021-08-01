@@ -4,8 +4,8 @@ import { ChevronDownIcon } from "@heroicons/react/solid"
 const Option = ({name, value, checked, setChecked, index}) => {
   return (
     <label className="inline-flex items-center w-full">
-      <input id={`checkbos-${index}`} type="checkbox" className="form-checkbox" value={value} checked={checked === value} onChange={(event) => setChecked(event.target.value)} />
-      <span className="ml-2 font-bold">{name}</span>
+      <input id={`checkbox-${index}`} type="checkbox" className="form-checkbox" value={value} checked={checked === value} onChange={(event) => setChecked(event.target.value)} />
+      <span className="ml-3 text-xs font-bold mt-1 text-primary">{name}</span>
     </label>
   )
 }
@@ -23,7 +23,7 @@ const Select = (props) => {
   }
 
   return (
-    <div className="relative" onBlur={() => setOpen(false)}>
+    <div className="relative">
       <button onClick={() => setOpen(!open)}>
         <div className="flex justify-between items-center">
           <span className="text-primary font-bold text-xs">Filter by status</span>
@@ -31,7 +31,7 @@ const Select = (props) => {
         </div>
       </button>
       {open && (
-        <div className="absolute transform left-1/2 -translate-x-1/2 shadow-xl rounded-2xl mt-6 p-3" style={{height: 100, background: "white", width: "150%"}}>
+        <div onBlur={setOpen(false)} className="absolute transform left-1/2 -translate-x-1/2 shadow-xl rounded-2xl mt-6 p-6 bg-white dark:bg-fill" style={{width: "150%"}}>
           {props.options.map((o, i) => (
             <Option key={i} index={i} name={o.name} value={o.value} checked={checked} setChecked={onCheckedChange} />
           ))}

@@ -10,6 +10,13 @@ function useDarkMode() {
     root.classList.remove(theme === "light" ? "theme-dark" : "theme-light");
     root.classList.add(theme === "light" ? "theme-light" : "theme-dark");
 
+    if (theme === "light") {
+      window.document.querySelector('html').classList.remove('dark')
+    } else {
+      window.document.querySelector('html').classList.add('dark')
+    }
+
+
     if (typeof window !== "undefined") {
       localStorage.setItem("theme", theme);
     }
