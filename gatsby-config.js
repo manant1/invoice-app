@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+    'gatsby-plugin-postcss',
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
@@ -28,6 +29,17 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts-v2`,
+      options: {
+        fonts: [
+          {
+            family: 'Spartan',
+            weights: ['200', '300', '400', '500', '600', '700']
+          }
+        ]
+      }
     },
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality

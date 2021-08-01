@@ -1,0 +1,49 @@
+@responsive {
+    .invoice-mobile-grid {
+        display: grid;
+        grid-template-areas: "invoiceNo client" ". ." "dueDate status" "sum status";
+    }
+}
+
+@responsive {
+    .invoice-grid {
+        display: grid;
+        grid-template-areas: "invoiceNo dueDate client client client sum status chevron";
+    }
+}
+
+.invoiceNo {
+    grid-area: invoiceNo;
+    align-self: center;
+    justify-self: left;
+}
+
+.client {
+    grid-area: client;
+    align-self: center;
+    justify-self: left;
+}
+
+.dueDate {
+    grid-area: dueDate;
+    align-self: center;
+    justify-self: left;
+}
+
+.status {
+    grid-area: status;
+    align-self: center;
+    justify-self: right;
+}
+
+.sum {
+    grid-area: sum;
+    align-self: center;
+    justify-self: right;
+}
+
+.chevron {
+    grid-area: chevron;
+    justify-self: right;
+    align-self: center;
+}

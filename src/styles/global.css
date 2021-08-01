@@ -1,0 +1,371 @@
+@font-face {
+    font-family: 'Spartan', sans-serif;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind forms;
+
+@layer base {
+    :root {
+        --color-text-base: #fff;
+        --color-text-primary: #0C0E16;
+        --color-text-primary-muted: #777F98;
+        --color-text-primary-button-muted: #7E88C3;
+        --color-text-label: #7E88C3;
+        --color-text-muted: #888EB0;
+        --color-text-inverted: #fff;
+        --color-text-success: #33d69f;
+        --color-text-warning: #ff8f02;
+        --color-text-draft: #373b53;
+
+        --color-input-text: #0C0E16;
+        --color-input-text-muted: #9e9fa2;
+
+        --color-bg-page: #f8f8fb;
+        --color-bg-fill: #373b53;
+        --color-bg-primary: #7c5dfa;
+        --color-bg-hover: #9277FF;
+        --color-bg-success: #33d69f;
+        --color-bg-warning: #ff8f02;
+        --color-bg-draft: #373b53;
+
+        --color-button-primary: #7c5dfa;
+        --color-button-primary-hover: #9277FF;
+        --color-button-primary-muted: #f9fafe;
+        --color-button-primary-muted-hover: #dfe3fa;
+        --color-button-success: #f3fdf9;
+        --color-button-warning: #fff8f0;
+        --color-button-draft: #f3f3f5;
+        --color-button-draft-hover: #0C0E16;
+        --color-button-danger: #ec5757;
+
+        --color-icon-primary: #7c5dfa;
+        --color-icon: #888EB0;
+        --color-icon-muted: #7E88C3;
+
+        --color-checkbox: #DFE3FA;
+        --color-checkbox-checked: #7c5dfa;
+
+        --color-divider: #494e6e;
+    }
+
+    .theme-light {
+        --color-text-base: #fff;
+        --color-text-primary: #0C0E16;
+        --color-text-primary-muted: #777F98;
+        --color-text-primary-button-muted: #7E88C3;
+        --color-text-label: #7E88C3;
+        --color-text-muted: #888EB0;
+        --color-text-inverted: #fff;
+        --color-text-success: #33d69f;
+        --color-text-warning: #ff8f02;
+        --color-text-draft: #373b53;
+
+        --color-input-text: #0C0E16;
+        --color-input-text-muted: #9e9fa2;
+
+        --color-bg-page: #f8f8fb;
+        --color-bg-fill: #373b53;
+        --color-bg-primary: #7c5dfa;
+        --color-bg-hover: #9277FF;
+        --color-bg-success: #33d69f;
+        --color-bg-warning: #ff8f02;
+        --color-bg-draft: #373b53;
+
+        --color-button-primary: #7c5dfa;
+        --color-button-primary-hover: #9277FF;
+        --color-button-primary-muted: #f9fafe;
+        --color-button-primary-muted-hover: #dfe3fa;
+        --color-button-success: #f3fdf9;
+        --color-button-warning: #fff8f0;
+        --color-button-draft: #f3f3f5;
+        --color-button-draft-hover: #0C0E16;
+        --color-button-danger: #ec5757;
+
+        --color-icon-primary: #7c5dfa;
+        --color-icon: #888EB0;
+        --color-icon-muted: #7E88C3;
+
+        --color-checkbox: #DFE3FA;
+        --color-checkbox-checked: #7c5dfa;
+
+        --color-divider: #494e6e;
+    }
+
+    .theme-dark {
+        --color-text-base: #fff;
+        --color-text-primary: #0C0E16;
+        --color-text-primary-muted: #777F98;
+        --color-text-primary-button-muted: #7E88C3;
+        --color-text-label: #7E88C3;
+        --color-text-muted: #888EB0;
+        --color-text-inverted: #fff;
+        --color-text-success: #33d69f;
+        --color-text-warning: #ff8f02;
+        --color-text-draft: #373b53;
+
+        --color-input-text: #0C0E16;
+        --color-input-text-muted: #9e9fa2;
+
+        --color-bg-page: #f8f8fb;
+        --color-bg-fill: #373b53;
+        --color-bg-primary: #7c5dfa;
+        --color-bg-hover: #9277FF;
+        --color-bg-success: #33d69f;
+        --color-bg-warning: #ff8f02;
+        --color-bg-draft: #373b53;
+
+        --color-button-primary: #7c5dfa;
+        --color-button-primary-hover: #9277FF;
+        --color-button-primary-muted: #f9fafe;
+        --color-button-primary-muted-hover: #dfe3fa;
+        --color-button-success: #f3fdf9;
+        --color-button-warning: #fff8f0;
+        --color-button-draft: #f3f3f5;
+        --color-button-draft-hover: #0C0E16;
+        --color-button-danger: #ec5757;
+
+        --color-icon-primary: #7c5dfa;
+        --color-icon: #888EB0;
+        --color-icon-muted: #7E88C3;
+
+        --color-checkbox: #DFE3FA;
+        --color-checkbox-checked: #7c5dfa;
+
+        --color-divider: #494e6e;
+    }
+
+    body {
+        background: var(--color-bg-page);
+    }
+}
+
+hr {
+    border-color: var(--color-divider);
+    height: 1px;
+}
+
+h1 {
+    @apply text-3xl;
+    @apply font-bold;
+    color: var(--color-text-primary)
+}
+
+h2 {
+    @apply text-2xl;
+    @apply font-bold;
+    color: var(--color-text-primary)
+}
+
+h3 {
+    @apply text-xl;
+    @apply font-bold;
+    color: var(--color-text-primary)
+}
+
+.logo {
+    position: relative;
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 50%;
+    background: var(--color-bg-hover);
+    border-radius: 20px 0px;
+}
+
+.dot {
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+}
+
+.circle {
+    z-index: 9999;
+    height: 40%;
+    width: 40%;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    clip-path: circle(50% at 50% 50%);
+}
+
+.triangle {
+    z-index: 9999;
+    height: 50%;
+    width: 50%;
+    background: var(--color-bg-primary);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
+
+.icon-muted {
+    fill: var(--color-icon);
+    stroke: var(--color-icon);
+}
+
+.icon-muted {
+    fill: var(--color-icon-muted);
+    stroke: var(--color-icon-muted);
+}
+
+.icon-primary {
+    fill: var(--color-icon-primary);
+    stroke: var(--color-icon-primary);
+}
+
+.symbol-primary {
+    color: var(--color-icon-primary);
+}
+
+.icon-primary-inverted {
+    fill: white;
+    stroke: white;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type='checkbox'] {
+    cursor: pointer;
+    background: var(--color-checkbox);
+    border: none;
+    border-radius: 3px;
+    outline: none !important;
+}
+
+input[type='checkbox']:checked {
+    color: var(--color-checkbox-checked);
+}
+
+input[type='checkbox']:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+
+input[type='checkbox']:active {
+    outline: none !important;
+}
+
+input[type='checkbox']:hover:not(:checked) {
+    background: var(--color-checkbox);
+    border: 1px solid var(--color-checkbox-checked);
+}
+
+input[type="checkbox"]:checked + b::after {
+    color: white;
+}
+
+@responsive {
+    .sideview-slide-in {
+        animation: slide-in 0.5s forwards;
+        animation-timing-function: ease-out;
+        animation-delay: 0ms;
+    }
+
+    .sideview-slide-in-mobile {
+        animation: slide-in-mobilde 0.5s forwards;
+        animation-timing-function: ease-out;
+        animation-delay: 0ms;
+    }
+
+    .sideview-slide-out {
+        animation: slide-out 0.35s forwards;
+        animation-timing-function: linear;
+        animation-delay: 0ms;
+    }
+
+    .sideview-slide-out-mobile {
+        animation: slide-out-mobile 0.35s forwards;
+        animation-timing-function: linear;
+        animation-delay: 0ms;
+    }
+}
+
+.backdrop {
+    animation: backdrop 0.5s forwards;
+    animation-delay: 0ms;
+    animation-timing-function: linear;
+}
+
+@keyframes backdrop {
+    0% {
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+    }
+
+    50% {
+        background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+    }
+
+    100% {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        width: 100px;
+        display: block;
+    }
+
+    95% {
+        width: 52.5%;
+    }
+
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes slide-in-mobile {
+    0% {
+        width: 0;
+        display: block;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        width: 50%
+    }
+
+    100% {
+        width: 0;
+        display: none;
+    }
+}
+
+@keyframes slide-out-mobile {
+    0% {
+        width: 100%
+    }
+
+    100% {
+        width: 0;
+        display: none;
+    }
+}
