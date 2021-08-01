@@ -10,22 +10,19 @@ import Sideview from "../components/sideview"
 
 const options = [{
   name: "Paid",
-  status: "success",
-  value: "0"
+  value: "success"
 }, {
   name: "Pending",
-  status: "warning",
-  value: "1"
+  value: "warning"
 }, {
   name: "Draft",
-  status: "draft",
-  value: "2"
+  value: "draft"
 }]
 
-const items = [{
+const data = [{
   invoiceNo: "MA00001",
   dueDate: "2021-07-01",
-  status: options[0].status,
+  status: options[0].value,
   type: options[0].name,
   client: {
     name: "Jensen",
@@ -35,8 +32,8 @@ const items = [{
 }, {
   invoiceNo: "MA00002",
   dueDate: "2021-08-05",
-  status: options[2].status,
-  type: options[2].name,
+  status: options[1].value,
+  type: options[1].name,
   client: {
     name: "Alex",
     lastName: "Grim"
@@ -45,33 +42,86 @@ const items = [{
 }, {
   invoiceNo: "MA00002",
   dueDate: "2021-08-05",
-  status: options[1].status,
-  type: options[1].name,
+  status: options[0].value,
+  type: options[0].name,
   client: {
     name: "Anita",
     lastName: "Watkins"
   },
   sum: 1999
+}, {
+  invoiceNo: "MA00002",
+  dueDate: "2021-08-05",
+  status: options[1].value,
+  type: options[1].name,
+  client: {
+    name: "Alex",
+    lastName: "Grim"
+  },
+  sum: 1500.5
+}, {
+  invoiceNo: "MA00002",
+  dueDate: "2021-08-05",
+  status: options[1].value,
+  type: options[1].name,
+  client: {
+    name: "Alex",
+    lastName: "Grim"
+  },
+  sum: 1500.5
+}, {
+  invoiceNo: "MA00002",
+  dueDate: "2021-08-05",
+  status: options[1].value,
+  type: options[1].name,
+  client: {
+    name: "Alex",
+    lastName: "Grim"
+  },
+  sum: 1500.5
+}, {
+  invoiceNo: "MA00002",
+  dueDate: "2021-08-05",
+  status: options[2].value,
+  type: options[2].name,
+  client: {
+    name: "Alex",
+    lastName: "Grim"
+  },
+  sum: 1500.5
 }]
 
 const IndexPage = () => {
   const [open, setOpen] = React.useState(false)
+  const [invoices, setInvoices] = React.useState(data)
+  const [filter, setFilter] = React.useState(null);
 
   const onClose = () => {
-    setOpen(false);
+    setOpen(false)
   }
+
+  React.useEffect(() => {
+    setInvoices(data)
+
+    if (filter) {
+      setInvoices(data.filter((invoice) => {
+        return invoice.status === filter
+      }))
+    }
+  }, [filter])
 
   return (
     <Layout> <Seo title="Invoices"/> <Sideview className="bg-white dark:bg-page" open={open} onClose={onClose}/>
-      <div className="flex-1 w-full py-18 px-12">
+      <div className="flex-1 w-full py-18 px-12 h-screen overflow-y-auto">
         <div className="max-w-3xl mx-auto h-full">
           <div className="flex justify-between items-center">
             <div>
               <h1>Invoices</h1>
-              <span className="text-muted text-xs">There are 7 total invoices</span>
+              <span className="text-muted text-xs">There are {invoices.length} total invoices</span>
             </div>
             <div className="flex justify-between items-center">
-              <Select options={options}/> <Button status={"primary"} className={"ml-6"} onClick={() => setOpen(!open)}>
+              <Select onChange={setFilter} selected={filter} options={options}/> <Button status={"primary"} className={"ml-6"}
+                                                                            onClick={() => setOpen(!open)}>
               <div className="flex items-center">
               <span className="bg-white relative" style={{ borderRadius: "50%", height: 30, width: 30 }}>
                 <PlusIcon style={{ height: 15, width: 15, strokeWidth: 1.75 }}
@@ -81,7 +131,7 @@ const IndexPage = () => {
             </Button>
             </div>
           </div>
-          <List className="mt-14" items={items}/>
+          {invoices.length > 0 && <List className="mt-6" items={invoices}/>}
         </div>
       </div>
     </Layout>
