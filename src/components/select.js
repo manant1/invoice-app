@@ -1,21 +1,35 @@
-import React from "react";
+import React, { useRef } from "react"
 import { ChevronDownIcon } from "@heroicons/react/solid"
 
 const Option = ({name, value, checked, setChecked, index}) => {
   return (
     <label className="inline-flex items-center w-full">
-      <input id={`checkbox-${index}`} type="checkbox" className="form-checkbox" value={value} checked={checked === value} onChange={(event) => setChecked(checked ? null : value)} />
+      <input id={`checkbox-${index}`} type="checkbox" className="form-checkbox" value={value} checked={checked === value} onChange={(event) => setChecked(checked === value ? null : value)} />
       <span className="ml-3 text-xs font-bold mt-1 text-primary">{name}</span>
     </label>
   )
 }
 
 const Select = (props) => {
+  const button = useRef();
+  const container = useRef();
   const {onChange, selected} = props;
   const [open, setOpen] = React.useState(false);
 
+  React.useEffect(() => {
+    const checkIfClickedOutside = e => {
+      if (open && button.current && !button.current.contains(e.target) && container.current && !container.current.contains(e.target)) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", checkIfClickedOutside)
+    return () => {
+      document.removeEventListener("mousedown", checkIfClickedOutside)
+    }
+  }, [open])
+
   return (
-    <div className="relative">
+    <div className="relative" ref={button}>
       <button onClick={() => setOpen(!open)}>
         <div className="flex justify-between items-center">
           <span className="text-primary font-bold text-xs">Filter by status</span>
@@ -23,7 +37,7 @@ const Select = (props) => {
         </div>
       </button>
       {open && (
-        <div onBlur={() => setOpen(false)} className="z-50 absolute transform left-1/2 -translate-x-1/2 shadow-xl rounded-2xl mt-6 p-6 bg-white dark:bg-fill" style={{width: "150%"}}>
+        <div ref={container} className="z-50 absolute transform left-1/2 -translate-x-1/2 shadow-xl rounded-2xl mt-6 p-6 bg-white dark:bg-fill" style={{width: "150%"}}>
           {props.options.map((o, i) => (
             <Option key={i} index={i} name={o.name} value={o.value} checked={selected} setChecked={onChange} />
           ))}
