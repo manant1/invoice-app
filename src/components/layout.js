@@ -1,13 +1,14 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import Header from "./header"
-import { AnimatePresence } from "framer-motion"
 
 const Layout = ({ children }) => {
   return (
     <>
       <div className="flex md:flex-row flex-col">
-        <Header/>
+        <div className="mb-16 md:mb-0">
+          <Header/>
+        </div>
         {children}
       </div>
     </>

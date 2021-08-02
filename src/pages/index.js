@@ -114,7 +114,7 @@ const IndexPage = () => {
   return (
     <AnimatePresence exitBeforeEnter> <Layout> <Seo title="Invoices"/> <Sideview className="bg-white dark:bg-page"
                                                                                  open={open} onClose={onClose}/>
-      <div className="flex-1 w-full py-18 px-12 h-screen overflow-y-auto">
+      <div className="flex-1 w-full py-9 px-6">
         <motion.div className="max-w-3xl mx-auto h-full" exit={{
           x: "-50%",
           opacity: 0,
@@ -122,18 +122,18 @@ const IndexPage = () => {
         }}>
           <div className="flex justify-between items-center">
             <div>
-              <h1>Invoices</h1>
-              <span className="text-muted text-xs">There are {invoices.length} total invoices</span>
+              <h1 className="text-xl md:text-3xl">Invoices</h1>
+              <span className="text-muted text-xxs">There are {invoices.length} total invoices</span>
             </div>
             <div className="flex justify-between items-center">
-              <Select onChange={setFilter} selected={filter} options={options}/> <Button status={"primary"}
-                                                                                         className={"ml-6"}
-                                                                                         onClick={() => setOpen(!open)}>
+              <Select onChange={setFilter} selected={filter} options={options} label={`Filter by status`}/> <Button
+              status={"primary"} className={"ml-6"} onClick={() => setOpen(!open)}>
               <div className="flex items-center">
               <span className="bg-white relative" style={{ borderRadius: "50%", height: 30, width: 30 }}>
                 <PlusIcon style={{ height: 15, width: 15, strokeWidth: 1.75 }}
                           className="icon-primary absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
-              </span> <span className="ml-3 mt-1 font-500">New Invoice</span>
+              </span> <span className="ml-3 mt-1 font-500">New&nbsp;<span
+                className="hidden md:inline-block">Invoice</span></span>
               </div>
             </Button>
             </div>

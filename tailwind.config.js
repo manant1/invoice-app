@@ -4,6 +4,10 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: "class",
   theme: {
+    fontSize: {
+      ...defaultTheme.fontSize,
+      xxs: "0.75rem"
+    },
     fontFamily: {
       'sans': 'Spartan, sans-serif'
     },

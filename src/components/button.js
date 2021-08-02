@@ -13,7 +13,7 @@ const Button = (props) => {
     }
   }
 
-  return <button onClick={props.onClick} className={classes + " font-bold text-xs pt-2 pr-4 pb-2 pl-2 h-12" + ` ${props.className || ""}`} style={{height: 46, minWidth: "6rem"}}>{props.children}</button>
+  return <button onClick={props.onClick} className={classes + " font-bold text-xs pt-2 pr-4 pb-2 pl-2 h-12" + ` ${props.className || ""}`} style={{height: 46}}>{props.children}</button>
 }
 
 export default Button

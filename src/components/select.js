@@ -32,12 +32,12 @@ const Select = (props) => {
     <div className="relative" ref={button}>
       <button onClick={() => setOpen(!open)}>
         <div className="flex justify-between items-center">
-          <span className="text-primary font-bold text-xs">Filter by status</span>
+          <span className="text-primary font-bold text-xs">{props.label.split(' ')[0]}&nbsp;<span className="hidden md:inline-block">{props.label.split(' ').pop()}</span></span>
           <ChevronDownIcon className={`ml-3 icon icon-primary transition-transform duration-250 linear transform ${open ? "rotate-180": "rotate-0"}`} style={{height: 20, stroke: "none"}} />
         </div>
       </button>
       {open && (
-        <div ref={container} className="z-50 absolute transform left-1/2 -translate-x-1/2 shadow-xl rounded-2xl mt-6 p-6 bg-white dark:bg-fill" style={{width: "150%"}}>
+        <div ref={container} className="z-50 absolute transform left-1/2 -translate-x-1/2 shadow-xl rounded-2xl mt-6 p-6 bg-white dark:bg-fill" style={{minWidth: "190px"}}>
           {props.options.map((o, i) => (
             <Option key={i} index={i} name={o.name} value={o.value} checked={selected} setChecked={onChange} />
           ))}

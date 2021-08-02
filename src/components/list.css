@@ -15,36 +15,24 @@
 
 .invoiceNo {
     grid-area: invoiceNo;
-    align-self: center;
-    justify-self: left;
 }
 
 .client {
     grid-area: client;
-    align-self: center;
-    justify-self: left;
 }
 
 .dueDate {
     grid-area: dueDate;
-    align-self: center;
-    justify-self: left;
 }
 
 .status {
     grid-area: status;
-    align-self: center;
-    justify-self: center;
 }
 
 .sum {
     grid-area: sum;
-    align-self: center;
-    justify-self: right;
 }
 
 .chevron {
     grid-area: chevron;
-    justify-self: right;
-    align-self: center;
 }

@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <aside
-      className="z-50 bg-fill md:w-menu md:h-menu w-mobile-menu h-mobile-menu md:rounded-br-2xl md:rounded-tr-2xl md:rounded-br-none rounded-tr-none">
+      className="fixed top-0 left-0 z-50 bg-fill md:w-menu md:h-menu w-mobile-menu h-mobile-menu md:rounded-br-2xl md:rounded-tr-2xl md:rounded-br-none rounded-tr-none">
       <div className="flex flex-wrap flex-col justify-between h-full w-full">
         <div className="">
           <div
@@ -19,7 +19,7 @@ const Header = () => {
         </div>
         <div className="flex flex-row md:flex-col text-center justify-end">
           <div>
-            {colorTheme === "light" ? <button className="mt-7 mb-7" onClick={() => setTheme("dark")}>
+            {colorTheme === "light" ? <button onClick={() => setTheme("dark")}>
                 <SunIcon className="icon icon-muted"/>
               </button> :
               <button className="m-7" onClick={() => setTheme("light")}>
@@ -27,15 +27,14 @@ const Header = () => {
               </button>}
           </div>
           <hr className="h-full w-px md:w-full inline-block bg-divider md:block"/>
-          <div>
+          <div className="my-auto mx-5 md:my-5 md:mx-auto">
             <StaticImage
               src="../images/avatar.png"
-              width={32}
-              height={32}
+              width={30}
+              height={30}
               quality={95}
               formats={["AUTO", "WEBP", "AVIF"]}
               alt="an avatar"
-              className="m-6"
             />
           </div>
         </div>
